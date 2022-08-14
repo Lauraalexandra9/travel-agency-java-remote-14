@@ -1,4 +1,4 @@
-package com.sda.travelagency.entity;
+package com.sda.travelagency.travelagency.entity;
 
 public enum TransportType {
     BUS,

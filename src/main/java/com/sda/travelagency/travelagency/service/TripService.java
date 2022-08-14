@@ -1,6 +1,6 @@
-package com.sda.travelagency.service;
+package com.sda.travelagency.travelagency.service;
 
-import com.sda.travelagency.entity.Trip;
+import com.sda.travelagency.travelagency.entity.Trip;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
