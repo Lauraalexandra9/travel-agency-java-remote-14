@@ -1,45 +1,29 @@
-package com.sda.travelagency.controller;
+package com.sda.travelagency.controller.advisor;
 
-import com.sda.travelagency.converter.TripConverter;
-import com.sda.travelagency.dto.TripDto;
-import com.sda.travelagency.service.TripService;
+import com.sda.travelagency.dto.ErrorResponse;
+import com.sda.travelagency.exception.TripNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
-@RestController
+import static org.springframework.http.HttpStatus.NOT_FOUND;
+
 @Slf4j
-@RequestMapping("/api/trips")
-public class TripController {
+@RestControllerAdvice
+public class TripControllerAdvisor {
 
-    private final TripService tripService;
+    @ResponseStatus(NOT_FOUND)
+    @ExceptionHandler(TripNotFoundException.class)
+    public ErrorResponse handleNotFoundTrips(TripNotFoundException exc) {
+        log.warn("handling not found trip", exc);
 
-    private final TripConverter tripConverter;
-
-    public TripController(TripService tripService, TripConverter tripConverter) {
-        this.tripService = tripService;
-        this.tripConverter = tripConverter;
-    }
-
-    @GetMapping
-    public List<TripDto> getAllTrips() {
-        log.info("getting all trips");
-
-        var entities = tripService.findAllTrips();
-        return entities.stream()
-                .map(trip -> tripConverter.fromEntityToDto(trip))
-                .toList();
-    }
-
-    @GetMapping("/{id}")
-    public TripDto getTripById(@PathVariable("id") Long id) {
-        log.info("getting the trip by id: [{}]", id);
-
-        var entity = tripService.findTripById(id);
-        return tripConverter.fromEntityToDto(entity);
+        return new ErrorResponse(LocalDateTime.now(),
+                404,
+                exc.getMessage(),
+                ServletUriComponentsBuilder.fromCurrentRequest().toString());
     }
 }
