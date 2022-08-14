@@ -1,6 +1,6 @@
-package com.sda.travelagency.travelagency.service;
+package com.sda.travelagency.service;
 
-import com.sda.travelagency.travelagency.entity.Trip;
+import com.sda.travelagency.entity.Trip;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +14,11 @@ public class TripService {
         log.info("finding all trips");
 
         return Collections.emptyList();
+    }
+
+    public Trip findTripById(Long id) {
+        log.info("finding trip by id: [{}]", id);
+
+        return null;
     }
 }

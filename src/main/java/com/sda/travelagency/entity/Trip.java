@@ -1,4 +1,4 @@
-package com.sda.travelagency.travelagency.entity;
+package com.sda.travelagency.entity;
 
 import lombok.*;
 
@@ -33,6 +33,8 @@ public class Trip {
     Attraction attraction;
 
     AgeRestrictions ageRestrictions;
+
+
 
 
 

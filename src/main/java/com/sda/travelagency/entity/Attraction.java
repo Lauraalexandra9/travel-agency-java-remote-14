@@ -1,4 +1,4 @@
-package com.sda.travelagency.travelagency.entity;
+package com.sda.travelagency.entity;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
