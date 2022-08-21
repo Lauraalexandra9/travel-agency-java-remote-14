@@ -1,5 +1,9 @@
 package com.sda.travelagency.entity;
 
+import com.sda.travelagency.entity.enumeration.AgeRestrictions;
+import com.sda.travelagency.entity.enumeration.MealType;
+import com.sda.travelagency.entity.enumeration.PaymentType;
+import com.sda.travelagency.entity.enumeration.TransportType;
 import lombok.*;
 
 import java.time.LocalDate;
