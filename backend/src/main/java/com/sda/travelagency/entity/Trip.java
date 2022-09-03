@@ -11,9 +11,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Trip {
     LocalDate tripStartDate;
 
@@ -40,6 +39,4 @@ public class Trip {
     AgeRestrictions ageRestrictions;
 
 
-    public DecimalFormatSymbols getTripPrice() {
-    }
 }
