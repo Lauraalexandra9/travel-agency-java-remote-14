@@ -6,6 +6,7 @@ import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
 import lombok.*;
 
+import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -39,11 +40,6 @@ public class Trip {
     AgeRestrictions ageRestrictions;
 
 
-
-
-
-
-
-
-
+    public DecimalFormatSymbols getTripPrice() {
+    }
 }
