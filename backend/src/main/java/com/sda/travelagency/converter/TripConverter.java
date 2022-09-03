@@ -21,7 +21,7 @@ public class TripConverter implements Converter<Trip, TripDto> {
     @Override
     public TripDto fromEntityToDto(Trip trip) {
        var DestinationDto destinationDto = destinationConverter.fromEntityToDto(trip.getDestination());
-       var security
+       var security;
 
                
         return TripDto.builder()
