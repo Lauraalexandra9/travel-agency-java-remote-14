@@ -37,7 +37,8 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
     public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
         var attractionsDtos = entity.getAttractions()
                 .stream()
-                .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+//              .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+                .map(attractionConverter::fromEntityToDto)
                 .toList();
 
 
