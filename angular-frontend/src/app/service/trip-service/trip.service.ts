@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {TripDto} from "../../models/trips";
-
+//import {allTripsUrl} from "../../models/urls";
 
 @Injectable({
   providedIn: 'root'
