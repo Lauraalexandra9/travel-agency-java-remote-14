@@ -18,8 +18,9 @@ export class TripListComponent implements OnInit {
     console.log("trying to obtain data from server...")
     this.tripService.getAllTrip()
       .pipe(
+      delay(5000),
         tap(value => console.log("from server: " + value))
-      ) //TODO: delay data to prevent that they are available some time later
+      )
       .subscribe(value => this.trips = value)
   }
 
