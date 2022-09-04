@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { TripListComponent } from './components/trip-list/trip-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
+import {HttpClientModule} from "@angular/common/http";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {MatCardModule} from "@angular/material/card";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatCardModule
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
