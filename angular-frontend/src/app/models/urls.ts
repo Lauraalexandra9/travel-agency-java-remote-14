@@ -1,2 +1,3 @@
+const serverUrl = 'http://localhost:8080'
+const allTripsUrl = `${serverUrl}/api/trips`
 
-const allTrips: string = 'http://localhost:8080/api/trips'
