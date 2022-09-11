@@ -14,6 +14,7 @@ import {AboutusComponent} from './components/aboutus/aboutus.component';
 import {HomeComponent} from './components/home/home.component';
 import {RouterModule} from "@angular/router";
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
       {path: 'about-usUrl', component: AboutusComponent},
       {path: 'all-tripsUrl', component: TripListComponent},
       {path: 'notFoundUrl', component: NotFoundComponent}
-    ])
+    ]),
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
