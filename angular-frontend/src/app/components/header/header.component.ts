@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TRAVEL_AGENCY_NAME} from "../../models/config";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  agencyName!: string
+
+  constructor() {
+    this.agencyName = TRAVEL_AGENCY_NAME;
+  }
 
   ngOnInit(): void {
   }
